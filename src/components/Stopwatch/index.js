@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { format, addSeconds, startOfDay } from 'date-fns';
+import stopwatch_styles from './Stopwatch.module.css';
 
 function Stopwatch() {
   const [value, setValue] = useState(startOfDay(new Date()));
@@ -18,8 +19,10 @@ function Stopwatch() {
   }, [isRun, value]);
 
   return (
-    <>
-      <h1>{format(value, 'HH:mm:ss')}</h1>
+    <div className={stopwatch_styles.wrapper}>
+      <h1 className={stopwatch_styles.time_style}>
+        {format(value, 'HH:mm:ss')}
+      </h1>
       <button
         onClick={() => {
           setIsRun(!isRun);
@@ -34,7 +37,7 @@ function Stopwatch() {
       >
         reset
       </button>
-    </>
+    </div>
   );
 }
 
