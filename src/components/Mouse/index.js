@@ -1,9 +1,30 @@
-import React from 'react';
-import { useMouse } from './useMouse';
+import React, { Component } from 'react';
 
-export default function Mouse(props) {
-  const [x, y] = useMouse();
-  return (
-    <img src="https://cdnimg.rg.ru/img/content/209/39/28/h_54702730_d_850.jpg" />
-  );
+class Mouse extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { x: 0, y: 0 };
+  }
+
+  handleMouseMove = (event) => {
+    this.setState({
+      x: event.clientX,
+      y: event.clientY,
+    });
+  };
+
+  render() {
+    const { render } = this.props;
+    return (
+      <div
+        style={{ height: '100vh', border: '4px solid red' }}
+        onMouseMove={this.handleMouseMove}
+      >
+        {render(this.state)}
+      </div>
+    );
+  }
 }
+
+export default Mouse;

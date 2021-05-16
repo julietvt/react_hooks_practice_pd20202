@@ -1,7 +1,7 @@
 import './App.css';
-import PageHeader from './components/PageHeader';
+import MouseTracker from './components/MouseTracker';
 
 function App() {
-  return <PageHeader />;
+  return <MouseTracker />;
 }
 export default App;
