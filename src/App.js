@@ -1,12 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
-import Counter from './components/Counter';
-import Stopwatch from './components/Stopwatch';
-import Counter_with_reducer from './components/Counter_with_reducer';
+import PageHeader from './components/PageHeader';
 
 function App() {
-  //return <Counter step={100} />;
-  //return <Stopwatch />;
-  return <Counter_with_reducer />;
+  return <PageHeader />;
 }
 export default App;
